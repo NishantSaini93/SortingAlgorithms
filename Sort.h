@@ -23,7 +23,7 @@ public:
 	*/
 	void InsertionSort();
 	void BubbleSort();
-	void QuickSort();
+	void QuickSort(int left,int right);
 	void MergeSort();
 	void SelectionSort();
 	void HeapSort();
@@ -33,6 +33,7 @@ public:
 	void CountingSort();
 	void GnomeSort();
 	void IntroSort();
+	void Display();
 };
 #endif
 

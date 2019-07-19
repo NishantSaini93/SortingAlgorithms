@@ -1,0 +1,7 @@
+﻿  Sort.cpp
+C:\Users\Nishu\source\repos\SortingAlgorithms\SortingAlgorithms\Sort.cpp(41,21): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\Nishu\source\repos\SortingAlgorithms\SortingAlgorithms\Sort.cpp(68,21): warning C4018:  '<': signed/unsigned mismatch
+  SortingAlgorithms.cpp
+  Generating Code...
+C:\Users\Nishu\source\repos\SortingAlgorithms\SortingAlgorithms\Sort.cpp(72,22): warning C4018:  '<': signed/unsigned mismatch
+  SortingAlgorithms.vcxproj -> C:\Users\Nishu\source\repos\SortingAlgorithms\Debug\SortingAlgorithms.exe
