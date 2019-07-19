@@ -1,8 +1,6 @@
 # SortingAlgorithms
 
-Visual Studio 2019 Used.
-
-Algorithm Implemented so far:
+Algorithms Implemented so far:
 
 Insertion Sort
 
