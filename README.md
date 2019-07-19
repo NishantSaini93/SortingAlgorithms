@@ -5,3 +5,5 @@ Algorithms Implemented so far:
 Insertion Sort
 
 Bubble Sort
+
+QuickSort
