@@ -7,3 +7,5 @@ Insertion Sort
 Bubble Sort
 
 QuickSort
+
+Selection Sort
