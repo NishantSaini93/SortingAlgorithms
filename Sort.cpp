@@ -18,6 +18,7 @@ void Sort::EnterAndChoose() {
 	std::cout << "Enter 1 for Insertion Sort." << std::endl;
 	std::cout << "Enter 2 for Bubble Sort." << std::endl;
 	std::cout << "Enter 3 for Quick Sort." << std::endl;
+	std::cout << "Enter 4 for Selection Sort" << std::endl;
 	std::cin >> number;
 	switch (number) {
 	case '1':InsertionSort();
@@ -27,6 +28,9 @@ void Sort::EnterAndChoose() {
 		Display();
 		break;
 	case '3':QuickSort(0,dataTosort.size()-1);
+		Display();
+		break;
+	case '4':SelectionSort();
 		Display();
 		break;
 	default:
@@ -85,7 +89,11 @@ void Sort::BubbleSort() {
 /**
 *This function perform QuickSort Using first element as piviot
 *@param left First element of current array
-*@param right LAst element of current array
+*@param right Last element of current array
+*Worst complexity: n^2
+*Average complexity: n*log(n)
+*Best complexity: n*log(n)
+*We can use use uniform random piviot
 */
 void Sort::QuickSort(int left,int right) {
 	//Base case when array size is one
@@ -110,6 +118,36 @@ void Sort::QuickSort(int left,int right) {
 	dataTosort[i - 1] = temp;
 	QuickSort(left, i - 2);
 	QuickSort( i, right);
+}
+/**
+*This function perform Selection Sort
+*Worst complexity: n^2
+*Average complexity: n^2
+*Best complexity: n^2
+*/
+void Sort::SelectionSort() {
+	//perfom phases in each phase we sort one element of array
+	int currentMinimumIndex{};
+	int currentMinimum{};
+	//outer loop
+	for (int i{ 0 }; i < dataTosort.size(); ++i) {
+		int flag{};
+		currentMinimum = dataTosort[i];
+		//inner loop
+		for (int j{ i + 1 }; j < dataTosort.size(); ++j) {
+			if (currentMinimum > dataTosort[j]) {
+				currentMinimum = dataTosort[j];
+				currentMinimumIndex = j;
+				flag = 1;
+			}
+		}
+		if (flag) {
+			int temp{ dataTosort[i] };
+			dataTosort[i] = dataTosort[currentMinimumIndex];
+			dataTosort[currentMinimumIndex] = temp;
+		}
+		
+	}
 }
 
 /**
