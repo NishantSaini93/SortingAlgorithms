@@ -9,3 +9,5 @@ Bubble Sort
 QuickSort
 
 Selection Sort
+
+Merge Sort
