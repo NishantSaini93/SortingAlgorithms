@@ -24,15 +24,9 @@ public:
 	void InsertionSort();
 	void BubbleSort();
 	void QuickSort(int left,int right);
-	void MergeSort();
+	void MergeSort(int start,int emd);
+	void Merging(int start, int middle, int end);
 	void SelectionSort();
-	void HeapSort();
-	void TimSort();
-	void RadixSort();
-	void ShellSort();
-	void CountingSort();
-	void GnomeSort();
-	void IntroSort();
 	void Display();
 };
 #endif

@@ -19,6 +19,7 @@ void Sort::EnterAndChoose() {
 	std::cout << "Enter 2 for Bubble Sort." << std::endl;
 	std::cout << "Enter 3 for Quick Sort." << std::endl;
 	std::cout << "Enter 4 for Selection Sort" << std::endl;
+	std::cout << "Enter 5 for Merge Sort" << std::endl;
 	std::cin >> number;
 	switch (number) {
 	case '1':InsertionSort();
@@ -31,6 +32,9 @@ void Sort::EnterAndChoose() {
 		Display();
 		break;
 	case '4':SelectionSort();
+		Display();
+		break;
+	case '5':MergeSort(0,dataTosort.size()-1);
 		Display();
 		break;
 	default:
@@ -149,6 +153,61 @@ void Sort::SelectionSort() {
 		
 	}
 }
+
+/**
+*This is responsible for sorting and merging of data
+*@param start Starting index of data to sort
+*@param middle Middle index of data to sort
+*@param end Last index of data to sort
+*/
+void Sort::Merging(int start, int middle, int end) {
+	int firstHalf{middle+1};
+	int secondHalf{middle+1};
+	std::vector<int> vecFirst;
+	std::vector<int> vecSecond;
+	for (int i = start; i < firstHalf; ++i) {
+		vecFirst.push_back(dataTosort[i]);
+	}
+	vecFirst.push_back(INT_MAX);
+	for (int i = secondHalf; i <=end; ++i) {
+		vecSecond.push_back(dataTosort[i]);
+	}
+	vecSecond.push_back(INT_MAX);
+	int index1{0};
+	int index2{0};
+	for (int k = start; k <= end; ++k) {
+		if (vecFirst[index1] < vecSecond[index2]) {
+			dataTosort[k] = vecFirst[index1];
+			++index1;
+		}
+		else {
+			dataTosort[k] = vecSecond[index2];
+			++index2;
+		}
+	}
+}
+
+/**
+*Merge Sort
+*if condition is there for termination
+*We are continously dividing data in smaller sizes
+*Merging function is sort and merge the divided data
+*@param start Starting index of data
+*@param end Last index of data
+*Worst complexity: n*log(n)
+*Average complexity: n*log(n)
+*Best complexity: n*log(n)
+*/
+void Sort::MergeSort(int start,int end) {
+	if (start < end) {
+		int middle = floor((start+end)/2);
+		MergeSort(start,middle);
+		MergeSort(middle+1,end);
+		Merging(start,middle,end);
+	}
+}
+
+
 
 /**
 *Function to display array
